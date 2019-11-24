@@ -11,5 +11,24 @@ Simulation environment (file: environment.m; Fig.1, A), and agent function (file
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/dependencies.png?raw=true)
 **Figure 1. Modular dependencies**
 
+##Environment
+
+Environment submodule is responsible for the initiation of simulation environment and agents. First, concmap function (file: concmap.m; Fig. 3, C) is called out to generate Serine gradient matrix with p[Ser] values (p[Ser] as log10 of Serine concentration). Concmap needs to be provided with a function responsible for generating a normalized gradient map (with values in range between 0 and 1). For following experiments, we designed a normgrad function (file: normgrad.m, Fig. 3, D), which generates circular gradient originating from the middle of the map. Additional gradient submodules can be implemented by following the design pattern of normgrad.
+After gradient setup, agents are initiated to provide environment submodule a trajectory plot. When agents have finished simulating the motion of bacteria, a figure is presented where all trajectories are plotted on the gradient to better visualize the relationship between agent behaviour and environment.
+
+##Agent
+
+Agent is a function/submodule responsible for simulating the behaviour of bacterium with provided concentration map and submodels for run and tumble. Additionally, amount of iterations is taken as a parameter. Agent utilizes tumble after every run to change the angle of movement. Run termination or continuation is determined through run submodel by providing it information about concentration and run length in progress.
+
+##Models for bacterium tumble
+
+First, we implemented two potential models for tumble angle generation that could be used in combination with other functionalities to simulate the behaviour of bacterium. Two types of approaches were applied to develop a model capable of describing change in angle of the movement during tumble process.
+
+##Beta distribution-based model
+
+In first case, we relied on experimental data provided by Berg et al., to develop a Beta distribution-based model. We collected data points from Figure 3 (Berg et al.) describing amounts of tumbles ending with different change in angles (summed into 18 intervals, Fig 4. A) with a goal to construct a Cumulative Density Function (CDF) describing probability for a tumble change of angle to be smaller than given angle in range of 0 to 180 degrees (Fig. 4, B). Brute force approach was implemented in curve fitting to find optimal parameters for Beta distribution (Figure 4. C). We took a step of 0.1 in a region of 0 to 10 for both a and b to test out the fit for different curves by applying least squares function. Fitting of Beta distribution was carried out in local Jupyter Notebook using Python with scipy, numpy and matplotlib packages.
+
+
+
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
 **Figure 1. Simulation results on 401x401 map** 
