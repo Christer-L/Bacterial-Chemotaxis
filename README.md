@@ -26,9 +26,13 @@ First, we implemented two potential models for tumble angle generation that coul
 
 ### Beta distribution-based model
 
-In first case, we relied on experimental data provided by Berg et al., to develop a Beta distribution-based model. We collected data points from Figure 3 (Berg et al.) describing amounts of tumbles ending with different change in angles (summed into 18 intervals, Fig 4. A) with a goal to construct a Cumulative Density Function (CDF) describing probability for a tumble change of angle to be smaller than given angle in range of 0 to 180 degrees (Fig. 4, B). Brute force approach was implemented in curve fitting to find optimal parameters for Beta distribution (Figure 4. C). We took a step of 0.1 in a region of 0 to 10 for both a and b to test out the fit for different curves by applying least squares function. Fitting of Beta distribution was carried out in local Jupyter Notebook using Python with scipy, numpy and matplotlib packages.
+In first case, we relied on experimental data provided by Berg et al., to develop a Beta distribution-based model. We collected data points from Figure 3 (Berg et al.) describing amounts of tumbles ending with different change in angles (summed into 18 intervals, Fig 2. A) with a goal to construct a Cumulative Density Function (CDF) describing probability for a tumble change of angle to be smaller than given angle in range of 0 to 180 degrees (Fig. 2, B). Brute force approach was implemented in curve fitting to find optimal parameters for Beta distribution (Figure 2. C). We took a step of 0.1 in a region of 0 to 10 for both a and b to test out the fit for different curves by applying least squares function. Fitting of Beta distribution was carried out in local Jupyter Notebook using Python with scipy, numpy and matplotlib packages.
 
 
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
 **Figure 1. Simulation results on 401x401 map** 
+
+
+## References
+Berg H., Brown D.A., Chemotaxis in Escherichia coli analysed by three-dimensional tracking. Nature, 239. 1972
