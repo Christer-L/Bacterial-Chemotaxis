@@ -1,4 +1,4 @@
-# Bacterial-Chemotaxis (Biomedical Modelling, 2019)
+# Modelling bacterial chemotaxis (Biomedical Modelling, 2019)
 
 Run and tumble numerical models simulate bacterial motion, and interaction with environment. Here we built a model based on Berg and Brown work published in 1972. In this article, they demonstrated particular behavior of Escherichia Coli regarding randomness in linear displacement length (called run phase) and in motion direction (a new angular orientation chosen in tumble phase). According to their results, run length was influenced by nutrients concentration in environment, as they observed the impact of Serine and Aspartate to different strains of E coli.
 
