@@ -8,8 +8,8 @@ Our model simulates Serine gradient and its effect on bacterium behaviour. We de
 
 Simulation environment (file: environment.m; Fig.1, A), and agent function (file: agent.m; Fig.1, B) were designed to allow flexible application of different submodels for bacterium run and tumble behaviour. Model functionalities are segmented into functions that can be used as input parameters for submodules part of the main framework (Fig. 1, marked in yellow). Given approach reduces interdependency between model components and simplifies further development of additional submodels responsible for gradient, run and tumble functionalities (Fig 1, marked in green).
 
-![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
-
+![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/dependencies.png?raw=true)
+**Figure 1. Modular dependencies**
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
 **Figure 1. Simulation results on 401x401 map** 
