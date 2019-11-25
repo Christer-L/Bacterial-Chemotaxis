@@ -30,7 +30,7 @@ In first case, we relied on experimental data provided by Berg et al., to develo
 
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/curve_fitting.png?raw=true)
-**Figure 2. Curve fitting |** (**A**) ... (**B**) ... (**C**) ... 
+**Figure 2. Curve fitting |** (**A**) Probability mass function of experimental data. (**B**) Cumulative density function of based on PMF of experimental data. (**C**) Comparison of CDF from live experiment and generated Beta function distribution.  
 
 
 
