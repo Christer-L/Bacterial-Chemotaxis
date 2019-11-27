@@ -1,5 +1,7 @@
 # Modelling bacterial chemotaxis (Biomedical Modelling, 2019)
 
+**Authors:** Christer LOHK & Emmanuelle RENOUL
+
 Run and tumble numerical models simulate bacterial motion, and interaction with environment. Here we built a model based on Berg and Brown work published in 1972. In this article, they demonstrated particular behavior of Escherichia Coli regarding randomness in linear displacement length (called run phase) and in motion direction (a new angular orientation chosen in tumble phase). According to their results, run length was influenced by nutrients concentration in environment, as they observed the impact of Serine and Aspartate to different strains of E coli.
 
 Our model simulates Serine gradient and its effect on bacterium behaviour. We developed two approaches to simulate change of angle in tumble process by utilizing data from article by Berg and Brown. Additionally, Gamma distribution-based model for run behaviour is demonstrated and tested in different conditions. We confirm that numerical models can be used to analyze stochastic processes in bacterium movement and provide a framework for simulating bacterium behaviour. Therefore new submodels can be created as further development and applied in combination with functionalities built in this project.
@@ -36,7 +38,7 @@ Using received parameters from fitting we implemented a function tumble (file: t
 
 ### Maxwell distribution-based model
 
-Second approach relied on the curve suggested by Berg et al. on their figure 3. Data points were collected from the distribution curve. We used fitting algorithm provided to us by Prof. Robert Kuszelewicz (Paris University) to find optimal parameters for Maxwell distribution through gradient descent. Based on received parameters from fitting algorithm, we implemented a function maxwell_tumble (file: tumble_maxwell.m; Fig. 3, F) to calculate probability according to Maxwell distribution for any given angle as an input parameter.
+Second approach relied on the curve suggested by Berg et al. on their figure 3. Data points were collected from the distribution curve. We used fitting algorithm provided to us by Prof. Robert Kuszelewicz to find optimal parameters for Maxwell distribution through gradient descent. Based on received parameters from fitting algorithm, we implemented a function maxwell_tumble (file: tumble_maxwell.m; Fig. 3, F) to calculate probability according to Maxwell distribution for any given angle as an input parameter.
 
 ## Models for bacterium run
 In our approach, run functions are designed to return boolean value, which lets agent know if it should stop the run currently in process or continue moving forward for one more time step. Information required for decision-making is provided to the run models by agent implementing the function.
