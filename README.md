@@ -37,8 +37,9 @@ Using received parameters from fitting we implemented a function tumble (file: t
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
 **Figure 1. Simulation results on 401x401 map** 
 
+### Maxwell distribution-based model
 
-*to be continued...*
+Second approach relied on the curve suggested by Berg et al. on their figure 3. Data points were collected from the distribution curve. We used fitting algorithm provided to us by Prof. Robert Kuszelewicz (Paris University) to find optimal parameters for Maxwell distribution through gradient descent. Based on received parameters from fitting algorithm, we implemented a function maxwell_tumble (file: tumble_maxwell.m; Fig. 3, F) to calculate probability according to Maxwell distribution for any given angle as an input parameter.
 
 ## References
 Berg H., Brown D.A., Chemotaxis in Escherichia coli analysed by three-dimensional tracking. Nature, 239. 1972
