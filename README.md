@@ -51,6 +51,19 @@ Gamma distribution based model gamrun (file: gamrun.m; Fig 3, H) applies distrib
 
 ## Results
 
+### Comparison of tumble models and experimental data
+A simulation inspired by the experiment described in figure 3 from Berg et al. was carried out to study the behaviour of models (tumble and maxwell_tumble) for 1166 tumble events. For both models, output angles were summed into 18 intervals and compared with experimental data (See Supplementary Fig. 1)
+
+Beta distribution-based model resulted in a mean and standard deviation of 66.02 ± 34.92 degrees and Maxwell-based model in 61.89 ± 25.27 degrees. It is important to bring out that Beta-based model was fitted to experimental data points (mean and standard deviation 68 ± 36 degrees; Berg et al., Table 1) and Maxwell-based statistical model to distribution suggested by Berg et al (mean and standard deviation 62 ± 26 degrees; Berg et al., Fig 3).
+
+### Comparison of agents with different submodels for tumble and run
+
+Run and tumble models were compared in simulation on circular Serine gradient. Two run models (Gamma and Simple) and two tumble models (Maxwell and Beta) were combined to set up 4 different agents: Beta-Simple (BS), Beta-Gamma (BG), Maxwell-Simple (MS) and Maxwell- Gamma (MG).
+
+In first experiment, agents were placed in the right corner of the 4001x4001 sized gradient map (coordinates: X, Y = 200). Their movement was simulated for 50 000 iterations (5 000 seconds) each. First initiation resulted an agent exiting bounds coordinates. Simulation was terminated and started over. Second run of simulation gave results for all agents (Fig 6). For every agent position in time, concentration was measured on its location to see in which concentration regions agents spend most time (Fig. 8).
+
+Second experiment was carried out on smaller 2001x2001 map with agents BG and MG. Iterations were reduced to 5000. Starting location was same for both agents and uniformly randomized. Two tests out of five ended up with termination due to out of bounds error. For three times concentrations were recorded for every position in time (Table 1; Fig. 7).
+
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
 **Figure 1. Simulation results on 401x401 map** 
 
