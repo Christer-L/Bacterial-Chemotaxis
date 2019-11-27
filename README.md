@@ -34,12 +34,26 @@ In first case, we relied on experimental data provided by Berg et al., to develo
 
 Using received parameters from fitting we implemented a function tumble (file: tumble.m; Fig. 3, E) for generating random angle values for tumble process. In given function betainv method from statistics package is utilized to map Beta distributed angles back from uniform random distribution.
 
-![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
-**Figure 1. Simulation results on 401x401 map** 
-
 ### Maxwell distribution-based model
 
 Second approach relied on the curve suggested by Berg et al. on their figure 3. Data points were collected from the distribution curve. We used fitting algorithm provided to us by Prof. Robert Kuszelewicz (Paris University) to find optimal parameters for Maxwell distribution through gradient descent. Based on received parameters from fitting algorithm, we implemented a function maxwell_tumble (file: tumble_maxwell.m; Fig. 3, F) to calculate probability according to Maxwell distribution for any given angle as an input parameter.
+
+## Models for bacterium run
+In our approach, run functions are designed to return boolean value, which lets agent know if it should stop the run currently in process or continue moving forward for one more time step. Information required for decision-making is provided to the run models by agent implementing the function.
+
+### Simplified model
+
+Simplified model simple_run (file: simple_run.m; Fig. 3G) requires only one input parameter: boolean, which is true if next step is towards higher concentration and false when towards lower concentration. No information about the length of run in process is required. If moving forward would result in environment with higher food concentration then bacterium has 80% probability to continue run. When the next step is towards lower concentration, only 50% chance is given for continuation.
+
+### Gamma distribution-based concentration dependent model
+
+Gamma distribution based model gamrun (file: gamrun.m; Fig 3, H) applies distribution adopted from Figure 5. of Berg et al. to change the mean of run continuation probability according to the Serine concentration. In addition to the gradient direction parameter mentioned in simplified model, given function requires length of run in progress and concentration in current bacterium location. Termination or continuation of run is determined by the CDF of Gamma distribution (parameter choice explained in Discussion). Change function (file: gamrun.m; Fig 3, I) is used to modify Gamma distribution k-value, which allows shifting the mean according to the Figure 5 in Berg et al.
+
+## Results
+
+![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
+**Figure 1. Simulation results on 401x401 map** 
+
 
 ## References
 Berg H., Brown D.A., Chemotaxis in Escherichia coli analysed by three-dimensional tracking. Nature, 239. 1972
