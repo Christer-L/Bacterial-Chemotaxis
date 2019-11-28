@@ -94,8 +94,11 @@ Second experiment was carried out on smaller 2001x2001 map with agents BG and MG
 
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
-**Figure 7 | Simulation results on 2001x2001 map.** (1,2,3) Numbers correlate with N in table X. Blue: Agent MG, Red: Agent BG.
+**Figure 7 | Simulation results on 2001x2001 map.** (**1**,**2**,**3**) Numbers correlate with N in **Table 1**. **Blue:** Agent MG, **Red:** Agent BG.
 
+## Conclusion
+
+In this project, we developed a framework to test run and tumble models based on data provided to us by Berg et al. We show that Gamma distribution can be used to describe run length of bacterium and test it in combination with two tumble models based on Maxwell and Beta distribution. Our frameworks submodular organization enables further parameters to be integrated into current model. Once validated the reproducibility of the experiment conducted in vitro by Berg and Brown, it should be interesting to test it with boundaries to observe the bacterial behavior with collision and changing gradient values in time.
 
 ## References
 Berg H., Brown D.A., Chemotaxis in Escherichia coli analysed by three-dimensional tracking. Nature, 239. 1972
