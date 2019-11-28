@@ -54,7 +54,7 @@ Gamma distribution based model gamrun (**file: gamrun.m; Fig 1, H**) applies dis
 When developing a model for bacterium run, we had to take under consideration its dependence on nutrient concentration. Berg et al. describe in their article how the mean run length changes in relation to the change in concentration (**Fig. 3**). Change function (**file: gamrun.m; Fig 1, I**) is used to modify Gamma distribution k-value, which allows shifting the mean according to the Figure 5 in Berg et al.
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/mean_change_function.png?raw=true)
-**Figure 3. Mean change distribution |** (**A**) Mean change distribution from Berg et al. (**B**) Simulated mean change function (**gamrun.m**).
+**Figure 3. Mean change distribution |** (**A**) Simulated mean change function (**gamrun.m**). (**B**) Mean change distribution from Berg et al.
 
 
 
