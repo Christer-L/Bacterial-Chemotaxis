@@ -56,6 +56,7 @@ When developing a model for bacterium run, we had to take under consideration it
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/mean_change_function.png?raw=true)
 **Figure 3 | Mean change distribution** (**A**) Simulated mean change function (**gamrun.m**). (**B**) Mean change distribution from Berg et al.
 
+When choosing a distribution for run lengths, we took under consideration two important aspects: 1) Statistics must describe a Poisson process, 2) Mean should be easily shifted by input parameters. Gamma distribution satisfied both of our conditions and acts as exponential distribution when shape parameter is equal to 1. Last property is useful, since run lengths on figure 4 in the article by Berg et al. follow exponential distribution with a mean of 0.83 seconds. Furthermore, Gamma distributions mean is the result of multiplication of shape and scale parameters, therefore when scale parameter is kept constant, mean of the distribution can be shifted through the shape parameter. For that reason mean taken from the article (0.83 seconds) was kept as a constant scale parameter and shape parameter was given to the distribution by a change function following bell curve seen on **Fig. 3**.
 
 
 ## Results
