@@ -34,24 +34,27 @@ In first case, we relied on experimental data provided by Berg et al., to develo
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/curve_fitting.png?raw=true)
 **Figure 2. Curve fitting |** (**A**) Probability mass function of experimental data. (**B**) Cumulative density function of based on PMF of experimental data. (**C**) Comparison of CDF from live experiment and generated Beta function distribution.  
 
-Using received parameters from fitting we implemented a function tumble (**file: tumble.m; Fig. 3, E**) for generating random angle values for tumble process. In given function betainv method from statistics package is utilized to map Beta distributed angles back from uniform random distribution.
+Using received parameters from fitting we implemented a function tumble (**file: tumble.m; Fig. 1, E**) for generating random angle values for tumble process. In given function betainv method from statistics package is utilized to map Beta distributed angles back from uniform random distribution.
 
 ### Maxwell distribution-based model
 
-Second approach relied on the curve suggested by Berg et al. on their figure 3. Data points were collected from the distribution curve. We used fitting algorithm provided to us by Prof. Robert Kuszelewicz to find optimal parameters for Maxwell distribution through gradient descent. Based on received parameters from fitting algorithm, we implemented a function maxwell_tumble (**file: tumble_maxwell.m; Fig. 3, F**) to calculate probability according to Maxwell distribution for any given angle as an input parameter.
+Second approach relied on the curve suggested by Berg et al. on their figure 3. Data points were collected from the distribution curve. We used fitting algorithm provided to us by Prof. Robert Kuszelewicz to find optimal parameters for Maxwell distribution through gradient descent. Based on received parameters from fitting algorithm, we implemented a function maxwell_tumble (**file: tumble_maxwell.m; Fig. 1, F**) to calculate probability according to Maxwell distribution for any given angle as an input parameter.
 
 ## Models for bacterium run
 In our approach, run functions are designed to return boolean value, which lets agent know if it should stop the run currently in process or continue moving forward for one more time step. Information required for decision-making is provided to the run models by agent implementing the function.
 
 ### Simplified model
 
-Simplified model simple_run (**file: simple_run.m; Fig. 3G**) requires only one input parameter: boolean, which is true if next step is towards higher concentration and false when towards lower concentration. No information about the length of run in process is required. If moving forward would result in environment with higher food concentration then bacterium has 80% probability to continue run. When the next step is towards lower concentration, only 50% chance is given for continuation.
+Simplified model simple_run (**file: simple_run.m; Fig. 1, G**) requires only one input parameter: boolean, which is true if next step is towards higher concentration and false when towards lower concentration. No information about the length of run in process is required. If moving forward would result in environment with higher food concentration then bacterium has 80% probability to continue run. When the next step is towards lower concentration, only 50% chance is given for continuation.
 
 ### Gamma distribution-based concentration dependent model
 
-Gamma distribution based model gamrun (**file: gamrun.m; Fig 3, H**) applies distribution adopted from Figure 5. of Berg et al. to change the mean of run continuation probability according to the Serine concentration. In addition to the gradient direction parameter mentioned in simplified model, given function requires length of run in progress and concentration in current bacterium location. Termination or continuation of run is determined by the CDF of Gamma distribution. 
+Gamma distribution based model gamrun (**file: gamrun.m; Fig 1, H**) applies distribution adopted from Figure 5. of Berg et al. to change the mean of run continuation probability according to the Serine concentration. In addition to the gradient direction parameter mentioned in simplified model, given function requires length of run in progress and concentration in current bacterium location. Termination or continuation of run is determined by the CDF of Gamma distribution. 
 
-When developing a model for bacterium run, we had to take under consideration its dependence on nutrient concentration. Berg et al. describe in their article how the mean run length changes in relation to the change in concentration (**Fig. 3**). Change function (**file: gamrun.m; Fig 3, I**) is used to modify Gamma distribution k-value, which allows shifting the mean according to the Figure 5 in Berg et al.
+When developing a model for bacterium run, we had to take under consideration its dependence on nutrient concentration. Berg et al. describe in their article how the mean run length changes in relation to the change in concentration (**Fig. 3**). Change function (**file: gamrun.m; Fig 1, I**) is used to modify Gamma distribution k-value, which allows shifting the mean according to the Figure 5 in Berg et al.
+
+![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/mean_change_function.png?raw=true)
+**Figure 3. Mean change distribution |** (**A**) Mean change distribution from Berg et al. (**B**) Simulated mean change function (**gamrun.m**).
 
 
 
