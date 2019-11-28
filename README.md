@@ -79,7 +79,7 @@ Second experiment was carried out on smaller 2001x2001 map with agents BG and MG
 **Table 1| Information from experiment on 2001x2001 map.** Mean concentration during BG and MG motion.
 
 |N|Start location|BG (mean ± STD)|MG (mean ± STD)|
---+--------------+--------------+-----------------
+|--|--------------|--------------|----------------|
 |1|X=688, Y=654|2.5258 ± 0.51505|2.6308 ± 0.62739|
 |2|X=1767, Y= 446|6.1607 ± 0.34125|4.1920 ± 1.0430|
 |3|X=680, Y=195|4.5135 ± 0.87887|5.2903 ± 0.48184|
