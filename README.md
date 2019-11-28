@@ -72,9 +72,9 @@ Beta distribution-based model resulted in a mean and standard deviation of 66.02
 
 Run and tumble models were compared in simulation on circular Serine gradient. Two run models (Gamma and Simple) and two tumble models (Maxwell and Beta) were combined to set up 4 different agents: Beta-Simple (BS), Beta-Gamma (BG), Maxwell-Simple (MS) and Maxwell- Gamma (MG).
 
-In first experiment, agents were placed in the right corner of the 4001x4001 sized gradient map (coordinates: X, Y = 200). Their movement was simulated for 50 000 iterations (5 000 seconds) each. First initiation resulted an agent exiting bounds coordinates. Simulation was terminated and started over. Second run of simulation gave results for all agents (Fig 6). For every agent position in time, concentration was measured on its location to see in which concentration regions agents spend most time (**Fig. 5**).
+In first experiment, agents were placed in the right corner of the 4001x4001 sized gradient map (coordinates: X, Y = 200). Their movement was simulated for 50 000 iterations (5 000 seconds) each. First initiation resulted an agent exiting bounds coordinates. Simulation was terminated and started over. Second run of simulation gave results for all agents (**Fig 5**). For every agent position in time, concentration was measured on its location to see in which concentration regions agents spend most time (**Fig. 6**).
 
-Second experiment was carried out on smaller 2001x2001 map with agents BG and MG. Iterations were reduced to 5000. Starting location was same for both agents and uniformly randomized. Two tests out of five ended up with termination due to out of bounds error. For three times concentrations were recorded for every position in time (**Table 1; Fig. 6**).
+Second experiment was carried out on smaller 2001x2001 map with agents BG and MG. Iterations were reduced to 5000. Starting location was same for both agents and uniformly randomized. Two tests out of five ended up with termination due to out of bounds error. For three times concentrations were recorded for every position in time (**Table 1; Fig. 7**).
 
 **Table 1| Information from experiment on 2001x2001 map.** Mean concentration during BG and MG motion.
 
@@ -88,8 +88,12 @@ Second experiment was carried out on smaller 2001x2001 map with agents BG and MG
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/50k_iterations.png?raw=true)
 **Figure 5 | Agent trajectories on 4001x4001 map.** Agents’ mean concentration and standard deviation per position (**BS**) 2.4202 ± 1.1392, (**BG**) 5.6982 ± 1.3491, (**MS**) 2.4731 ± 1.0725, (**MG**G) 3.2766 ± 1.5949.
 
+![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/50k_results.png?raw=true)
+**Figure 6 | Time spent by each agent in concentration interval regions on 4001x4001 map.** (**BG**, **MG**, **MS**, **BS**) **y-axis:** time spent (counted in 0.1 seconds), **x-axis:** p[Ser] values. 50 000 iterations for each agent (0.1 s per iteration).
+
+
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
-**Figure 6 | Simulation results on 2001x2001 map.** (1,2,3) Numbers correlate with N in table X. Blue: Agent MG, Red: Agent BG.
+**Figure 7 | Simulation results on 2001x2001 map.** (1,2,3) Numbers correlate with N in table X. Blue: Agent MG, Red: Agent BG.
 
 
 ## References
