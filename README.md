@@ -11,7 +11,7 @@ Our model simulates Serine gradient and its effect on bacterium behaviour. We de
 Simulation environment (**file: environment.m; Fig.1, A**), and agent function (**file: agent.m; Fig.1, B**) were designed to allow flexible application of different submodels for bacterium run and tumble behaviour. Model functionalities are segmented into functions that can be used as input parameters for submodules part of the main framework (**Fig. 1, marked in yellow**). Given approach reduces interdependency between model components and simplifies further development of additional submodels responsible for gradient, run and tumble functionalities (**Fig 1, marked in green**).
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/dependencies.png?raw=true)
-**Figure 1. Modular dependencies**
+**Figure 1 | Modular dependencies**
 
 ## Environment
 
@@ -32,7 +32,7 @@ In first case, we relied on experimental data provided by Berg et al., to develo
 
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/curve_fitting.png?raw=true)
-**Figure 2. Curve fitting |** (**A**) Probability mass function of experimental data. (**B**) Cumulative density function of based on PMF of experimental data. (**C**) Comparison of CDF from live experiment and generated Beta function distribution.  
+**Figure 2 | Curve fitting ** (**A**) Probability mass function of experimental data. (**B**) Cumulative density function of based on PMF of experimental data. (**C**) Comparison of CDF from live experiment and generated Beta function distribution.  
 
 Using received parameters from fitting we implemented a function tumble (**file: tumble.m; Fig. 1, E**) for generating random angle values for tumble process. In given function betainv method from statistics package is utilized to map Beta distributed angles back from uniform random distribution.
 
@@ -54,14 +54,17 @@ Gamma distribution based model gamrun (**file: gamrun.m; Fig 1, H**) applies dis
 When developing a model for bacterium run, we had to take under consideration its dependence on nutrient concentration. Berg et al. describe in their article how the mean run length changes in relation to the change in concentration (**Fig. 3**). Change function (**file: gamrun.m; Fig 1, I**) is used to modify Gamma distribution k-value, which allows shifting the mean according to the Figure 5 in Berg et al.
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/mean_change_function.png?raw=true)
-**Figure 3. Mean change distribution |** (**A**) Simulated mean change function (**gamrun.m**). (**B**) Mean change distribution from Berg et al.
+**Figure 3 | Mean change distribution** (**A**) Simulated mean change function (**gamrun.m**). (**B**) Mean change distribution from Berg et al.
 
 
 
 ## Results
 
 ### Comparison of tumble models and experimental data
-A simulation inspired by the experiment described in figure 3 from Berg et al. was carried out to study the behaviour of models (tumble and maxwell_tumble) for 1166 tumble events. For both models, output angles were summed into 18 intervals and compared with experimental data (See Supplementary Fig. 1)
+A simulation inspired by the experiment described in figure 3 from Berg et al. was carried out to study the behaviour of models (tumble and maxwell_tumble) for 1166 tumble events. For both models, output angles were summed into 18 intervals and compared with experimental data (**Fig. 4**)
+
+![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/tumble_results.png?raw=true)
+**Figure 4 | Different distributions of tumble angles.** (**A**) Angle distribution from Berg et al. in vivo experiments. (**B**) Angle distribution from tumble model following Beta distribution. (**C**) Angle distribution from Monte Carlo-based tumble_maxwell model following Maxwell distribution.
 
 Beta distribution-based model resulted in a mean and standard deviation of 66.02 ± 34.92 degrees and Maxwell-based model in 61.89 ± 25.27 degrees. It is important to bring out that Beta-based model was fitted to experimental data points (mean and standard deviation 68 ± 36 degrees; Berg et al., Table 1) and Maxwell-based statistical model to distribution suggested by Berg et al (mean and standard deviation 62 ± 26 degrees; Berg et al., Fig 3).
 
@@ -74,7 +77,7 @@ In first experiment, agents were placed in the right corner of the 4001x4001 siz
 Second experiment was carried out on smaller 2001x2001 map with agents BG and MG. Iterations were reduced to 5000. Starting location was same for both agents and uniformly randomized. Two tests out of five ended up with termination due to out of bounds error. For three times concentrations were recorded for every position in time (Table 1; Fig. 7).
 
 ![](https://github.com/Christer-L/Bacterial-Chemotaxis/blob/master/img/5k_iterations.png?raw=true)
-**Figure 1. Simulation results on 401x401 map** 
+**Figure 5 | Simulation results on 401x401 map.** 
 
 
 ## References
